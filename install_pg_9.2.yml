@@ -1,0 +1,8 @@
+- hosts: pg_9.2
+  sudo: True
+  sudo_user: root
+
+  roles:
+  - pg9.2
+  - common_setup
+  - pg_setup

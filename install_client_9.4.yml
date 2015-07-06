@@ -1,0 +1,5 @@
+- hosts: client_9.4
+
+  roles:
+  - client_9.4_setup
+  - common_setup

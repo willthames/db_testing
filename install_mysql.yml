@@ -1,0 +1,11 @@
+- hosts: mysql
+  remote_user: root
+
+  pre_tasks:
+  - name: install python-mysqldb for mysql management
+    yum: name=MySQL-python state=present
+
+  roles:
+  - mysql
+  - common_setup
+  - mysql_setup

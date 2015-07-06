@@ -1,0 +1,3 @@
+instance_type: t2.small
+image: ami-bd523087
+db_driver: both

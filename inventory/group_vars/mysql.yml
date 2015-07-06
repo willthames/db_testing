@@ -1,0 +1,25 @@
+instance_type: c4.large
+image: ami-b3523089
+remote_user: root
+db_driver: MySQL
+
+mysql_db:
+- name: "{{db_name}}"
+
+mysql_users:
+- name: "{{db_user}}"
+  password: "{{db_pass}}"
+  host: '%'
+  priv: '{{db_name}}.*:ALL'
+- name: "{{db_user}}"
+  password: "{{db_pass}}"
+  priv: '{{db_name}}.*:ALL'
+
+mysql_port: 3306
+mysql_bind_address: "0.0.0.0"
+mysql_root_db_pass: testing
+
+mysql_repl_user: []
+
+mysql_repl_role: master
+mysql_db_id: 7

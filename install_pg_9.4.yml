@@ -1,0 +1,6 @@
+- hosts: pg_9.4
+
+  roles:
+  - pg9.4
+  - common_setup
+  - pg_setup

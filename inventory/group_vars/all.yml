@@ -1,0 +1,11 @@
+region: ap-southeast-2
+zone: ap-southeast-2a
+homedir: "{{ansible_env['HOME']}}"
+db_user: testing
+db_pass: testing
+db_name: testing
+
+# Define the below in e.g. amazon.yml and pass to ansible-playbook with -e @amazon.yml
+sshkey: "mysshkey"
+security_group: "sg-fedcab21"
+subnet: "subnet-abcd1234"

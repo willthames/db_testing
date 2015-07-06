@@ -1,0 +1,37 @@
+instance_type: c4.large
+image: ami-bd523087
+postgresql_data_directory: /var/lib/pgsql/data
+postgresql_conf_directory: /var/lib/pgsql/data
+postgresql_external_pid_file: "/var/run/postgresql/{{postgresql_version}}-{{postgresql_cluster_name}}.pid"
+postgresql_logging_collector: on
+postgresql_unix_socket_directories: [ /var/run/postgresql ]
+join_char: ""
+
+postgresql_databases:
+- name: "{{db_name}}"
+
+postgresql_users:
+- name: "{{db_user}}"
+  pass: "{{db_pass}}"
+  db: "{{db_name}}"
+
+db_driver: Pg
+
+postgresql_encoding: 'UTF-8'
+postgresql_locale: 'en_US.UTF-8'
+postgresql_log_directory: /var/log/postgresql
+postgresql_log_filename: "postgresql-%Y%m%d-%H%M%S.log"
+postgresql_log_rotation_size: 1GB
+postgresql_log_rotation_age: 1h
+
+postgresql_log_line_prefix: '%t [%p]: [%l-1] user=%u,db=%d '
+postgresql_log_checkpoints: on
+postgresql_log_connections: on
+postgresql_log_disconnections: on
+postgresql_log_lock_waits: on
+postgresql_log_temp_files: 0
+postgresql_log_autovacuum_min_duration: 0
+
+postgresql_log_min_duration_statement: 0
+postgresql_log_rotation_age: 10min
+#postgresql_log_duration: on
